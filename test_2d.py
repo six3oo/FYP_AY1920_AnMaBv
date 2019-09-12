@@ -74,3 +74,15 @@ class bot:
             self.fovList = [[self.x-1, self.y+1], [self.x-1, self.y-1], [self.x-1][self.y]]
 
         return self.fovList;
+
+    def moveUp(self):
+        self.y += 1;
+
+    def moveDown(self):
+        self.y -= 1;
+
+    def moveRight(self):
+        self.x += 1;
+
+    def moveLeft(self):
+        self.x -= 1;
