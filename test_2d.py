@@ -47,3 +47,30 @@ for x in range(h):
         outString += str(Matrix[x][y]);
     print(outString);
     outString = "";
+
+# declaring bot
+class bot:  
+    def __init__(self, x, y, botDir, fovList = = [[0 for x in range(2)] for y in range(3)]):
+        self.x = x;
+        self.y = y;
+        self.dir = botDir;
+        self.fov = fovList;
+
+    def direction(self):
+        return self.botDir;
+
+    def fov(self):
+        #botDir = 1 implies facing upwards, with each +1 rotating 90deg clockwise
+        if botDir == 1:
+            self.fovList = [[self.x, self.y+1], [self.x-1, self.y+1], [self.x+1][self.y+1]]
+
+        elif botDir == 2:
+            self.fovList = [[self.x+1, self.y+1], [self.x+1, self.y-1], [self.x+1][self.y]]
+            
+        elif botDir == 3:
+            self.fovList = [[self.x+1, self.y-1], [self.x-1, self.y-1], [self.x][self.y-1]]
+            
+        elif botDir == 4:
+            self.fovList = [[self.x-1, self.y+1], [self.x-1, self.y-1], [self.x-1][self.y]]
+
+        return self.fovList;
